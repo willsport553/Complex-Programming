@@ -1,4 +1,5 @@
 from platform import java_ver
+from pip import main
 import pygame
 import pygame.freetype
 from pygame.sprite import Sprite
@@ -27,7 +28,7 @@ class UIElement (Sprite):
         self.images = [default_image, highlighted_image]
         self.rects = [
             default_image.get_rect(center=center_position),
-            highlighted_image.get_rect(center_position=center_position)]
+            highlighted_image.get_rect(center=center_position)]
 
 
     @property
@@ -55,10 +56,23 @@ class UIElement (Sprite):
         uielement = UIElement(
             center_position=(400, 400),
             font_size=30, 
-            bg_rbg=BLUE
+            bg_rgb=BLUE,
             text_rgb=WHITE,
             text='Hello World'
         )
+
+        while True:
+            for event in pygame.event.get():
+                pass
+            screen.fill(BLUE)
+
+            uielement.update(pygame.mouse.get_pos())
+            uielement.draw(screen)
+            pygame.display.flip()
+
+main() 
+
+
 
 
 
