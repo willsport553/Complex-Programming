@@ -1,4 +1,4 @@
-from platform import java_ver
+# from platform import java_ver
 from pip import main
 import pygame
 import pygame.freetype
