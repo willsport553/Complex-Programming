@@ -12,10 +12,15 @@ pygame.display.set_caption('clickey snake')
 
 #Colours 
 
-red = (255, 0, 0)
-green = 0, 255, 0)
-purple = (255, 0, 255)
+orange = (255,165,0)
+light_blue = (173,216,230)
+dark_blue = (0,0,139)
 black = (0, 0, 0)
+
+#Redraw Function
+
+def redraw(): 
+    win.fill
 
 #Main Loop
 
@@ -26,7 +31,7 @@ while run:
     pygame.time.delay(60)
 
     for event in pygame.event.get():
-        if event.type == pygame.quit
+        if event.type == pygame.quit:
             run = False
 
 pygame.quit()
